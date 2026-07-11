@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prixial — Ethical Data Steward Company</title>
+  <meta name="description" content="Prixial helps organizations build trustworthy AI by sourcing, curating, validating, governing, and maintaining ethical datasets.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Canvas Background -->
+  <canvas id="network-canvas"></canvas>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav__logo">PRIXIAL</div>
+    <div class="nav__links">
+      <a href="#services" class="nav__link">Services</a>
+      <a href="#industries" class="nav__link">Industries</a>
+      <a href="#about" class="nav__link">About</a>
+      <a href="#case-studies" class="nav__link">Case Studies</a>
+      <a href="#contact" class="nav__link">Contact</a>
+    </div>
+    <button class="nav__menu-btn" id="menu-btn" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#services" class="mobile-menu__link">Services</a>
+    <a href="#industries" class="mobile-menu__link">Industries</a>
+    <a href="#about" class="mobile-menu__link">About</a>
+    <a href="#case-studies" class="mobile-menu__link">Case Studies</a>
+    <a href="#contact" class="mobile-menu__link">Contact</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero__content">
+      <h1 class="hero__headline">Every Trusted AI<br>Begins With Trusted Data.</h1>
+      <p class="hero__subheadline">Prixial is an Ethical Data Steward Company helping organizations source, curate, validate, and govern datasets for responsible artificial intelligence.</p>
+      <div class="hero__buttons">
+        <a href="#services" class="btn btn--primary">Explore Services</a>
+        <a href="#contact" class="btn btn--secondary">Talk to an Expert</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="section services" id="services">
+    <div class="section__header">
+      <span class="section__label">01 — SERVICES</span>
+      <h2 class="section__title">End-to-End Data<br>Stewardship</h2>
+    </div>
+    <div class="services__grid">
+      <div class="service-node" data-service="discovery">
+        <div class="service-node__dot"></div>
+        <h3 class="service-node__title">Dataset Discovery</h3>
+        <p class="service-node__desc">Ethical sourcing of datasets from verified, compliant, and diverse data providers worldwide.</p>
+      </div>
+      <div class="service-node" data-service="validation">
+        <div class="service-node__dot"></div>
+        <h3 class="service-node__title">Human-in-the-Loop Validation</h3>
+        <p class="service-node__desc">Expert human review ensuring accuracy, fairness, and contextual relevance of every record.</p>
+      </div>
+      <div class="service-node" data-service="annotation">
+        <div class="service-node__dot"></div>
+        <h3 class="service-node__title">Data Annotation</h3>
+        <p class="service-node__desc">Precise, scalable annotation services for computer vision, NLP, and multimodal datasets.</p>
+      </div>
+      <div class="service-node" data-service="qa">
+        <div class="service-node__dot"></div>
+        <h3 class="service-node__title">Dataset Quality Assurance</h3>
+        <p class="service-node__desc">Rigorous quality pipelines that validate completeness, consistency, and statistical integrity.</p>
+      </div>
+      <div class="service-node" data-service="evaluation">
+        <div class="service-node__dot"></div>
+        <h3 class="service-node__title">AI Evaluation</h3>
+        <p class="service-node__desc">Benchmarking model performance against ethical standards and domain-specific requirements.</p>
+      </div>
+      <div class="service-node" data-service="compliance">
+        <div class="service-node__dot"></div>
+        <h3 class="service-node__title">Compliance Review</h3>
+        <p class="service-node__desc">Ensuring datasets meet regulatory frameworks including GDPR, CCPA, and sector-specific mandates.</p>
+      </div>
+      <div class="service-node" data-service="synthetic">
+        <div class="service-node__dot"></div>
+        <h3 class="service-node__title">Synthetic Dataset Creation</h3>
+        <p class="service-node__desc">Generating privacy-preserving synthetic data that maintains statistical fidelity for training.</p>
+      </div>
+      <div class="service-node" data-service="governance">
+        <div class="service-node__dot"></div>
+        <h3 class="service-node__title">Data Governance</h3>
+        <p class="service-node__desc">Establishing frameworks for lineage tracking, access control, and lifecycle management.</p>
+      </div>
+      <div class="service-node" data-service="workflow">
+        <div class="service-node__dot"></div>
+        <h3 class="service-node__title">Workflow Automation</h3>
+        <p class="service-node__desc">Streamlining data operations with intelligent pipelines that reduce time-to-deployment.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries Section -->
+  <section class="section industries" id="industries">
+    <div class="section__header">
+      <span class="section__label">02 — INDUSTRIES</span>
+      <h2 class="section__title">Trusted Across<br>Every Sector</h2>
+    </div>
+    <div class="industries__network">
+      <div class="industry-node" data-industry="healthcare">Healthcare</div>
+      <div class="industry-node" data-industry="regtech">RegTech</div>
+      <div class="industry-node" data-industry="cybersecurity">Cybersecurity</div>
+      <div class="industry-node" data-industry="legal">Legal</div>
+
+      <div class="industry-node" data-industry="education">Education</div>
+      <div class="industry-node" data-industry="realestate">Real Estate</div>
+      <div class="industry-node" data-industry="geospatial">Geospatial</div>
+      <div class="industry-node" data-industry="cv">Computer Vision</div>
+      <div class="industry-node" data-industry="llms">LLMs</div>
+      <div class="industry-node" data-industry="web3">Web3</div>
+
+    </div>
+  </section>
+
+  <!-- Philosophy Section -->
+  <section class="section philosophy" id="about">
+    <div class="philosophy__content">
+      <span class="section__label">03 — PHILOSOPHY</span>
+      <h2 class="philosophy__headline">Data is not a resource.<br>It is a responsibility.</h2>
+      <p class="philosophy__text">Every dataset has a history, a purpose, and a future. Prixial treats data as a long-term asset through ethical sourcing, transparent governance, and human-centered validation.</p>
+    </div>
+  </section>
+
+  <!-- Metrics Section -->
+  <section class="section metrics" id="case-studies">
+    <div class="metrics__grid">
+      <div class="metric">
+        <span class="metric__value" data-target="100">0</span><span class="metric__suffix">%</span>
+        <span class="metric__label">Human Validation Accuracy</span>
+      </div>
+      <div class="metric">
+        <span class="metric__value" data-target="24">0</span><span class="metric__suffix">/7</span>
+        <span class="metric__label">Data Operations Support</span>
+      </div>
+      <div class="metric">
+        <span class="metric__value" data-target="8">0</span><span class="metric__suffix">+</span>
+        <span class="metric__label">Industries Covered</span>
+      </div>
+      <div class="metric">
+        <span class="metric__value" data-target="48">0</span><span class="metric__suffix">h</span>
+        <span class="metric__label">Average Turnaround</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section cta" id="contact">
+    <div class="cta__content">
+      <span class="section__label">04 — GET IN TOUCH</span>
+      <h2 class="cta__headline">Ready to build<br>trustworthy AI?</h2>
+      <p class="cta__text">Let's discuss how Prixial can become your ethical data steward partner.</p>
+      <div class="cta__buttons">
+        <a href="mailto:johnc.yongco@gmail.com" class="btn btn--primary">Start a Conversation</a>
+        <a href="#services" class="btn btn--secondary">View Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <span class="footer__logo">PRIXIAL</span>
+        <p class="footer__tagline">Building Trustworthy AI Through Ethical Data Stewardship</p>
+      </div>
+      <div class="footer__col">
+        <span class="footer__col-title">Services</span>
+        <a href="#services" class="footer__link">Dataset Discovery</a>
+        <a href="#services" class="footer__link">Validation</a>
+        <a href="#services" class="footer__link">Annotation</a>
+        <a href="#services" class="footer__link">Governance</a>
+      </div>
+      <div class="footer__col">
+        <span class="footer__col-title">Company</span>
+        <a href="#about" class="footer__link">About</a>
+        <a href="#case-studies" class="footer__link">Case Studies</a>
+        <a href="#contact" class="footer__link">Contact</a>
+      </div>
+      <div class="footer__col">
+        <span class="footer__col-title">Connect</span>
+        <a href="#" class="footer__link">LinkedIn</a>
+        <a href="#" class="footer__link">Twitter</a>
+        <a href="mailto:johnc.yongco@gmail.com" class="footer__link">johnc.yongco@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 Prixial. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script src="js/network.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
