@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://prixial.xyz/sitemap.xml
