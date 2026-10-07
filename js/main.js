@@ -1,6 +1,41 @@
 (() => {
   'use strict';
 
+  // Clean production routes require the configured web server. Translate them
+  // to real HTML files when the site is opened directly or on a local preview.
+  const isLocalPreview = window.location.protocol === 'file:' || ['localhost', '127.0.0.1'].includes(window.location.hostname);
+  if (isLocalPreview) {
+    const localRoutes = {
+      '/': 'index.html',
+      '/solutions': 'index.html#solutions',
+      '/system': 'index.html#system',
+      '/projects': 'index.html#projects',
+      '/blog': 'index.html#blog',
+      '/contact': 'index.html#contact',
+      '/about': 'about.html',
+      '/pyl-ai': 'pyl-ai.html',
+      '/how-pyl-works': 'pyl-ai.html#how-pyl-works',
+      '/how-we-validate-ideas': 'how-we-validate-ideas.html',
+      '/ai-product-architecture': 'ai-product-architecture.html',
+      '/systems-thinking': 'systems-thinking.html',
+      '/building-faster': 'building-faster.html',
+      '/ai-workflows': 'ai-workflows.html',
+      '/first-version': 'first-version.html',
+      '/philippines-generative-ai-rag-enterprise-knowledge-search': 'philippines-generative-ai-rag-enterprise-knowledge-search.html',
+      '/philippines-rag-company-enterprise-ai-development': 'philippines-rag-company-enterprise-ai-development.html',
+      '/place-bound-ai-agent-permission-context-location': 'place-bound-ai-agent-permission-context-location.html',
+      '/spatial-rag-geospatial-reasoning': 'spatial-rag-geospatial-reasoning.html',
+      '/ai-agent-memory-what-to-remember-forget-permission': 'ai-agent-memory-what-to-remember-forget-permission.html',
+      '/hyperlocal-preparedness-ai': 'hyperlocal-preparedness-ai.html',
+      '/alima-project-household-preparedness-assistant': 'alima-project-household-preparedness-assistant.html'
+    };
+
+    document.querySelectorAll('a[href^="/"]').forEach((link) => {
+      const localTarget = localRoutes[link.getAttribute('href')];
+      if (localTarget) link.href = new URL(localTarget, document.baseURI).href;
+    });
+  }
+
   const nav = document.querySelector('#nav');
   const menuButton = document.querySelector('#menu-button');
   const mobileNav = document.querySelector('#mobile-nav');

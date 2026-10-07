@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Agent Memory: What Should an Agent Remember and Forget?</title>
+  <meta name="description" content="Learn what AI agents should remember, forget, and ask permission to keep, with clear rules for privacy, access, retention, and trust.">
+  <meta name="keywords" content="AI Agent Memory, Context-Aware AI, RAG, AI Governance, Data Privacy">
+  <link rel="canonical" href="https://prixial.xyz/ai-agent-memory-what-to-remember-forget-permission">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Prixial">
+  <meta property="og:title" content="AI Agent Memory: What Should an Agent Remember and Forget?">
+  <meta property="og:description" content="Learn what AI agents should remember, forget, and ask permission to keep, with clear rules for privacy, access, retention, and trust.">
+  <meta property="og:url" content="https://prixial.xyz/ai-agent-memory-what-to-remember-forget-permission">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1765867967050-30db3e7a3be8?auto=format&amp;fit=crop&amp;w=1600&amp;q=85">
+  <meta property="article:published_time" content="2026-10-07">
+  <meta property="article:section" content="AI Agents &amp; Governance">
+  <meta property="article:tag" content="AI Agent Memory">
+  <meta property="article:tag" content="Context-Aware AI">
+  <meta property="article:tag" content="RAG">
+  <meta property="article:tag" content="AI Governance">
+  <meta property="article:tag" content="Data Privacy">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Agent Memory: What Should an Agent Remember and Forget?">
+  <meta name="twitter:description" content="Learn what AI agents should remember, forget, and ask permission to keep, with clear rules for privacy, access, retention, and trust.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1765867967050-30db3e7a3be8?auto=format&amp;fit=crop&amp;w=1600&amp;q=85">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI Agent Memory: What Should an Agent Remember and Forget?",
+    "description": "Learn what AI agents should remember, forget, and ask permission to keep, with clear rules for privacy, access, retention, and trust.",
+    "author": {"@type": "Person", "name": "John Christian Yongco"},
+    "datePublished": "2026-10-07",
+    "image": "https://images.unsplash.com/photo-1765867967050-30db3e7a3be8?auto=format&fit=crop&w=1600&q=85",
+    "articleSection": "AI Agents & Governance",
+    "keywords": ["AI Agent Memory", "Context-Aware AI", "RAG", "AI Governance", "Data Privacy"],
+    "mainEntityOfPage": "https://prixial.xyz/ai-agent-memory-what-to-remember-forget-permission"
+  }
+  </script>
+</head>
+<body class="article-page article-page--editorial">
+  <div class="site-shell">
+    <header class="nav" id="nav">
+      <a class="wordmark wordmark--logo" href="/" aria-label="Prixial home"><img src="public/logo.png" alt="Prixial mark"></a>
+      <nav class="nav__links" aria-label="Main navigation"><a href="/solutions">Solutions</a><a href="/system">System</a><a href="/about">About</a><a href="/projects">Use Cases</a><a href="/blog">Blog</a></nav>
+      <a class="nav__cta" href="https://cal.com/john-christian-yongco-pqx6d2/discovery">Contact <span>&rarr;</span></a>
+      <button class="menu-button" id="menu-button" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    </header>
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true"><a href="/solutions">Solutions</a><a href="/system">System</a><a href="/about">About</a><a href="/projects">Use Cases</a><a href="/blog">Blog</a><a class="button button--dark" href="mailto:johnc.yongco@gmail.com">Get in Touch <span>&rarr;</span></a></div>
+
+    <main class="article-main">
+      <header class="article-header article-header--editorial">
+        <div class="article-header__meta"><span class="eyebrow">AI Agents &amp; Governance</span><span class="eyebrow">AI Agent Memory</span></div>
+        <h1>AI Agent Memory: What Should an Agent Remember and Forget?</h1>
+        <div class="article-header__byline"><strong>John Christian Yongco</strong><span>October 7, 2026</span><span>12 min read</span></div>
+        <div class="article-tags" aria-label="Article tags"><span>AI Agent Memory</span><span>Context-Aware AI</span><span>RAG</span><span>AI Governance</span><span>Data Privacy</span></div>
+      </header>
+
+      <figure class="article-hero-media">
+        <img src="https://images.unsplash.com/photo-1765867967050-30db3e7a3be8?auto=format&amp;fit=crop&amp;w=1600&amp;q=85" alt="Hand writing a checklist in a notebook beside a laptop">
+        <figcaption>Photo by <a href="https://unsplash.com/photos/hand-writing-notes-in-a-notebook-at-a-desk-1rm4_SojyNM">Jakub Żerdzicki on Unsplash</a>.</figcaption>
+      </figure>
+
+      <section class="article-tldr" aria-labelledby="tldr-heading">
+        <h2 id="tldr-heading">TL;DR</h2>
+        <p>An AI agent needs memory when its work continues beyond one chat session. It may need to retain an approved preference, a past decision, an open task, or a workflow that worked before.</p>
+        <p>It should not save everything.</p>
+        <p>A well-designed memory system stores information only when there is a clear reason to keep it. Each item needs a source, access rule, and retention period. Old details should expire. Sensitive information should not be stored without a reason. People should be able to correct or remove personal information.</p>
+        <p>The rule is simple:</p>
+        <blockquote><p>Remember less. Keep clear records. Let people correct what the agent keeps.</p></blockquote>
+      </section>
+
+      <div class="article-layout article-layout--with-toc">
+        <aside class="article-toc">
+          <details open>
+            <summary>Table of contents</summary>
+            <nav aria-label="Table of contents">
+              <a href="#why-memory">Why agents need memory</a>
+              <a href="#rag-memory-context">RAG, memory, and context</a>
+              <a href="#memory-types">The main types of agent memory</a>
+              <a href="#what-to-remember">What an agent should remember</a>
+              <a href="#what-to-forget">What an agent should forget</a>
+              <a href="#permission">When an agent must ask permission</a>
+              <a href="#memory-rules">Memory rules</a>
+              <a href="#similarity-search">Why similarity search is not enough</a>
+              <a href="#testing">How to test agent memory</a>
+              <a href="#faq">Frequently asked questions</a>
+              <a href="#conclusion">Remember less, prove more</a>
+            </nav>
+          </details>
+          <a class="article-toc__back" href="/blog">Back to Blog &larr;</a>
+        </aside>
+
+        <article class="article-content">
+          <h2 id="why-memory">Why Agents Need Memory</h2>
+          <p>A short chatbot conversation can end without leaving anything behind. The user asks a question, gets an answer, and moves on.</p>
+          <p>An agent often handles work that continues over time. It may need to:</p>
+          <ul><li>Continue a task started yesterday</li><li>Remember an approved user preference</li><li>Track the status of a request</li><li>Follow a recurring process</li><li>Recall a previous decision</li><li>Avoid repeating a failed step</li><li>Follow rules for a specific team or project</li></ul>
+          <p>Without memory, the agent starts from zero each time. Users have to repeat themselves. The agent may lose track of a request or ignore a decision made earlier.</p>
+          <p>Agent memory is the part of the system that stores and retrieves useful information across tasks or sessions. This can include current task details, long-term facts, past events, and approved process steps.</p>
+
+          <h2 id="rag-memory-context">RAG, Memory, and Context Do Different Jobs</h2>
+          <p>These terms are often used together, but they are not the same thing.</p>
+          <h3>Context</h3>
+          <p>Context is what the agent needs for the task happening now.</p>
+          <p>It may include the user’s question, current location, role, selected project, recent messages, and tool results.</p>
+          <p>Much of this information can disappear after the task ends.</p>
+          <h3>RAG</h3>
+          <p>RAG searches an approved knowledge source when the user asks a question.</p>
+          <p>For example, the system might retrieve a policy, product manual, price sheet, or project report. It does not need to turn that document into permanent memory just because it used it once.</p>
+          <p>RAG answers:</p>
+          <blockquote><p>What does the source material say?</p></blockquote>
+          <h3>Memory</h3>
+          <p>Memory stores information that may still matter later.</p>
+          <p>Examples include:</p>
+          <ul><li>A user prefers concise answers</li><li>A project manager approved a deadline change</li><li>A maintenance request is still open</li><li>A tool sequence failed during a previous task</li><li>A user does not want reminders after 8 PM</li></ul>
+          <p>Memory answers:</p>
+          <blockquote><p>What happened before, and what should carry forward?</p></blockquote>
+          <p>RAG retrieves from an existing knowledge source when needed. Memory stores information that survives across sessions. They can work together, but they should not be treated as one system.</p>
+
+          <h2 id="memory-types">The Main Types of Agent Memory</h2>
+          <h3>Working memory</h3>
+          <p>Working memory holds details for the task in progress.</p>
+          <p>It can include the current goal, recent messages, tool outputs, and temporary calculations.</p>
+          <p>It should usually disappear when the task is finished.</p>
+          <h3>Short-term memory</h3>
+          <p>Short-term memory covers a recent session or a limited period.</p>
+          <p>For example, it may retain an open support issue until the issue is resolved or the session expires.</p>
+          <h3>Long-term memory</h3>
+          <p>Long-term memory stores details that remain useful across sessions.</p>
+          <p>Examples include:</p>
+          <ul><li>A customer’s preferred contact method</li><li>A project’s approved naming convention</li><li>A user’s accessibility preference</li><li>A recurring business rule</li></ul>
+          <p>Long-term memory needs an owner and a way to update, correct, or delete it.</p>
+          <h3>Episodic memory</h3>
+          <p>Episodic memory records a specific event.</p>
+          <p>For example:</p>
+          <ul><li>A deployment failed on July 2 and was rolled back.</li><li>A customer declined a proposed appointment time.</li><li>A technician completed an inspection at a site.</li></ul>
+          <p>It helps the agent understand what happened before.</p>
+          <h3>Semantic memory</h3>
+          <p>Semantic memory stores facts.</p>
+          <p>Examples include:</p>
+          <ul><li>The finance team approves invoices.</li><li>A property belongs to a certain portfolio.</li><li>A customer uses an enterprise plan.</li></ul>
+          <p>Facts can become outdated. The system needs a way to replace or review them.</p>
+          <h3>Procedural memory</h3>
+          <p>Procedural memory stores how a task should be done.</p>
+          <p>Examples include:</p>
+          <ul><li>The steps for handling a refund request</li><li>A process for preparing a monthly report</li><li>The approval path for a maintenance work order</li></ul>
+          <p>This should come from an approved workflow, not an unreviewed agent guess.</p>
+
+          <h2 id="what-to-remember">What an Agent Should Remember</h2>
+          <p>Before saving a memory, ask:</p>
+          <ul><li>Will this matter in a later task?</li><li>Do we know where it came from?</li><li>Is it accurate enough to keep?</li><li>Would the user expect the agent to remember it?</li><li>Is there someone responsible for updating it?</li><li>Can it be corrected or deleted?</li></ul>
+          <p>Good candidates include:</p>
+          <ul><li>Preferences that help future interactions</li><li>Open tasks and their status</li><li>Approved decisions and commitments</li><li>Project-specific rules</li><li>Verified facts with a known source</li><li>Past failures that help prevent the same mistake</li><li>Workflows approved by the responsible team</li></ul>
+          <p>Each saved item should carry more than plain text. It should include:</p>
+          <ul><li>Its source</li><li>The date it was created</li><li>The person or system that supplied it</li><li>Its scope, such as one user, team, project, or organization</li><li>Confidence level</li><li>Retention date</li><li>Permission level</li></ul>
+
+          <h2 id="what-to-forget">What an Agent Should Forget</h2>
+          <p>Saving every message causes privacy, cost, and accuracy problems.</p>
+          <p>An agent should avoid retaining:</p>
+          <ul><li>Full chat transcripts by default</li><li>Passwords, API keys, and access tokens</li><li>Sensitive details that are not needed</li><li>Unverified claims</li><li>Temporary information with no future purpose</li><li>Information copied from an unrelated conversation</li><li>Old preferences that no longer apply</li><li>Information a user asked to remove</li></ul>
+          <p>Memory should expire when it no longer serves a purpose.</p>
+          <p>A booking preference may be useful for months. A delivery instruction may matter for one day. A project update may become wrong after a new decision.</p>
+          <p>Every memory type needs a rule for how long it remains valid.</p>
+
+          <h2 id="permission">When an Agent Must Ask Permission</h2>
+          <p>An agent should ask before saving information that a reasonable person would not expect it to keep.</p>
+          <p>This can include:</p>
+          <ul><li>Preferences used in future sessions</li><li>Health, financial, or sensitive personal information</li><li>Exact location history</li><li>Details from a private work conversation</li><li>Long-term records from customer interactions</li><li>Data used to personalize future recommendations</li></ul>
+          <p>The request should explain what will be saved and why.</p>
+          <p>Weak request:</p>
+          <blockquote><p>Can I remember this conversation?</p></blockquote>
+          <p>Better request:</p>
+          <blockquote><p>You said you prefer maintenance updates by SMS. May I save that preference for future service requests?</p></blockquote>
+          <p>The user should be able to decline without losing access to the main service.</p>
+
+          <h2 id="memory-rules">Memory Needs Scope, Source, Expiry, and Access Rules</h2>
+          <p>A memory system needs rules before it needs a vector database.</p>
+          <p>Each memory item should answer four questions.</p>
+          <h3>Scope</h3>
+          <p>Who does this memory belong to?</p>
+          <p>It may belong to one user, one team, one project, one property, or the whole organization. A memory from one customer should never appear in another customer’s chat.</p>
+          <h3>Source</h3>
+          <p>Where did it come from?</p>
+          <p>The system should record whether it came from a user, approved document, connected business system, or human reviewer.</p>
+          <h3>Expiry</h3>
+          <p>How long should it remain valid?</p>
+          <p>Some items can expire automatically. Others need a scheduled review. A three-year-old preference should not be treated as current without checking.</p>
+          <h3>Access</h3>
+          <p>Who can view or change it?</p>
+          <p>A user may be allowed to update their own preferences. A manager may be able to see project decisions. Only authorized systems should update approved workflows.</p>
+
+          <h2 id="similarity-search">Why Similarity Search Is Not Enough</h2>
+          <p>A vector search can find text that appears similar to a question. It cannot decide whether the text is current, permitted, or reliable.</p>
+          <p>A memory system needs filters for:</p>
+          <ul><li>User or tenant</li><li>Role and permission</li><li>Project or location</li><li>Date and expiry</li><li>Source quality</li><li>Confidence level</li><li>Memory type</li></ul>
+          <p>For example, an agent should not retrieve one customer’s contact preference for another customer just because the wording is alike.</p>
+          <p>Similarity search finds possible matches. The policy layer decides whether the agent can use that memory.</p>
+
+          <h2 id="testing">How to Test Agent Memory</h2>
+          <p>Do not only test whether the agent can remember a fact.</p>
+          <p>Test whether it remembers the right fact for the right person at the right time.</p>
+          <p>Useful tests include:</p>
+          <ul><li>Does it retain an approved user preference?</li><li>Does it avoid saving a sensitive detail without permission?</li><li>Does it remove expired information?</li><li>Can a user correct a false memory?</li><li>Can a user ask for deletion?</li><li>Does the memory stay within the correct user, team, and project?</li><li>Can it distinguish a past event from a current fact?</li><li>Does it avoid repeating a known failed workflow?</li><li>Can it show the source of a stored decision?</li></ul>
+          <p>Review failures often. A wrong memory can affect later conversations and actions.</p>
+
+          <h2 id="faq">Frequently Asked Questions</h2>
+          <h3>What is AI agent memory?</h3>
+          <p>AI agent memory is the part of an AI system that stores and retrieves useful information across tasks or sessions. It can include preferences, decisions, task state, past events, and approved workflows.</p>
+          <h3>Is AI agent memory the same as RAG?</h3>
+          <p>No. RAG retrieves information from a knowledge base when the system needs it. Memory stores information that should continue from one interaction to another.</p>
+          <h3>Can agent memory increase hallucinations?</h3>
+          <p>Yes. Problems happen when an agent stores unverified or outdated information. Source records, expiry rules, review processes, and correction tools help reduce that risk.</p>
+          <h3>Can users delete what an agent remembers?</h3>
+          <p>They should be able to correct or remove personal information stored about them. The process depends on the system’s purpose and the privacy rules that apply.</p>
+          <h3>Does every agent need long-term memory?</h3>
+          <p>No. An agent that handles one short task may only need working memory. Long-term memory is useful when users return, work continues over time, or the agent needs to carry forward an approved decision.</p>
+          <h3>Is a vector database enough for agent memory?</h3>
+          <p>No. A vector database stores and searches text by similarity. It does not decide what should be saved, who can see it, when it expires, or how a user can correct it.</p>
+
+          <aside class="article-reflection"><p>From work in AI output evaluation, workflow automation, and GIS data quality, I have learned that storing more information does not automatically make an agent more useful. The useful part is setting clear rules: what it may retain, who may see it, when it expires, and how a person can correct or remove it.</p></aside>
+
+          <h2 id="conclusion">Remember Less, Prove More</h2>
+          <p>Memory can make an AI agent more helpful over time. It can also cause privacy, cost, and trust problems when it is poorly managed.</p>
+          <p>The answer is not to save every message. Save only information the system has a valid reason to keep.</p>
+          <p>Record the source. Set a scope and expiry date. Ask permission when the information affects a person. Give users a way to correct or remove their data.</p>
+          <p>An agent that remembers carefully is easier to trust.</p>
+
+          <aside class="article-author-note"><p>Written by John Christian Yongco, a Philippines-based AI data operations and GIS specialist. His work includes AI output evaluation, workflow automation, location-data quality, and structured information systems.</p></aside>
+
+          <section class="article-sources" aria-labelledby="sources-heading">
+            <h2 id="sources-heading">Sources</h2>
+            <ul>
+              <li><a href="https://www.dataiku.com/blog/ai-agent-memory">Dataiku: AI Agent Memory: Types and Architectures Explained</a></li>
+              <li><a href="https://www.pingcap.com/playbook/ai-agent-memory/">TiDB: AI Agent Memory Architecture</a></li>
+              <li><a href="https://www.min.io/learn/ai-agent-memory-architecture-patterns-trade-offs-and-enterprise-best-practices">MinIO: AI Agent Memory Architecture</a></li>
+            </ul>
+          </section>
+
+          <aside class="article-offer article-offer--subtle" aria-labelledby="article-offer-heading">
+            <span class="eyebrow">A governed first step</span>
+            <h2 id="article-offer-heading">Need help defining safe, useful memory for an AI assistant?</h2>
+            <p>Talk to Prixial about a focused, governed pilot.</p>
+            <a class="button button--dark" href="https://cal.com/john-christian-yongco-pqx6d2/30min">Discuss your use case <span>&rarr;</span></a>
+          </aside>
+        </article>
+      </div>
+    </main>
+
+    <footer class="footer"><div class="footer__top"><div class="footer__brand"><a class="wordmark" href="/">PRIXIAL<span class="wordmark__dot">.</span></a><p>Context-aware AI systems<br>for a world in context.</p></div><div class="footer__column"><span class="eyebrow">Company</span><a href="/about">About</a><a href="/pyl-ai">Pyl AI</a><a href="/blog">Blog</a><a href="/contact">Contact</a></div><div class="footer__column"><span class="eyebrow">What We Build</span><a href="/solutions">Intent discovery</a><a href="/solutions">Contextual retrieval</a><a href="/solutions">Spatial intelligence</a><a href="/solutions">Adaptive systems</a></div><div class="footer__column"><span class="eyebrow">Focus</span><a href="/system">System</a><a href="/pyl-ai">Pyl AI</a><a href="/blog">Field notes</a></div><div class="footer__column"><span class="eyebrow">Contact</span><a href="mailto:johnc.yongco@gmail.com">Get in Touch</a></div></div><div class="footer__bottom"><span>&copy; 2026 Prixial. All rights reserved.</span><span>Intent &times; Intelligence.</span><a href="/">Back to top &uarr;</a></div></footer>
+  </div>
+  <script src="js/main.js"></script>
+  <script>if (window.matchMedia('(max-width: 900px)').matches) document.querySelector('.article-toc details')?.removeAttribute('open');</script>
+</body>
+</html>

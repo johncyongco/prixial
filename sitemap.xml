@@ -16,33 +16,38 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://prixial.xyz/how-we-validate-ideas</loc>
+    <loc>https://prixial.xyz/philippines-generative-ai-rag-enterprise-knowledge-search</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://prixial.xyz/ai-product-architecture</loc>
+    <loc>https://prixial.xyz/philippines-rag-company-enterprise-ai-development</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://prixial.xyz/systems-thinking</loc>
+    <loc>https://prixial.xyz/place-bound-ai-agent-permission-context-location</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://prixial.xyz/building-faster</loc>
+    <loc>https://prixial.xyz/spatial-rag-geospatial-reasoning</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://prixial.xyz/ai-workflows</loc>
+    <loc>https://prixial.xyz/ai-agent-memory-what-to-remember-forget-permission</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://prixial.xyz/first-version</loc>
+    <loc>https://prixial.xyz/hyperlocal-preparedness-ai</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://prixial.xyz/alima-project-household-preparedness-assistant</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
