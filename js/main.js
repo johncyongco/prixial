@@ -446,6 +446,53 @@
     window.addEventListener('scroll', updatePylScrollCue, { passive: true });
   }
 
+  const pylSectionRoutes = {
+    '/solutions': 'solutions',
+    '/system': 'system',
+    '/projects': 'projects',
+    '/blog': 'blog',
+    '/contact': 'contact',
+    '/how-pyl-works': 'how-pyl-works'
+  };
+  const pylPath = () => {
+    const path = window.location.pathname.replace(/\/+$/, '');
+    return path === '' ? '/' : path;
+  };
+  const pylScrollToRoute = (path, smooth) => {
+    if (path === '/') {
+      window.scrollTo({ top: 0, behavior: smooth ? 'smooth' : 'auto' });
+      return true;
+    }
+    const target = document.getElementById(pylSectionRoutes[path]);
+    if (!target) return false;
+    window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY, behavior: smooth ? 'smooth' : 'auto' });
+    return true;
+  };
+  document.addEventListener('click', (event) => {
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey) return;
+    const link = event.target.closest ? event.target.closest('a[href]') : null;
+    if (!link) return;
+    const href = link.getAttribute('href');
+    if (!href || href.charAt(0) !== '/' || href.charAt(1) === '/') return;
+    const path = (href.split('#')[0].split('?')[0].replace(/\/+$/, '')) || '/';
+    if (path !== '/' && !pylSectionRoutes[path]) return;
+    const exists = path === '/' ? document.getElementById('top') : document.getElementById(pylSectionRoutes[path]);
+    if (!exists) return;
+    event.preventDefault();
+    if (window.location.pathname !== path) window.history.pushState({}, '', path);
+    pylScrollToRoute(path, true);
+  });
+  window.addEventListener('popstate', () => {
+    const path = pylPath();
+    if (path === '/' || pylSectionRoutes[path]) pylScrollToRoute(path, false);
+  });
+  window.addEventListener('load', () => {
+    const path = pylPath();
+    if (path !== '/' && pylSectionRoutes[path] && document.getElementById(pylSectionRoutes[path])) {
+      window.setTimeout(() => pylScrollToRoute(path, false), 80);
+    }
+  });
+
   if (!document.querySelector('link[rel="icon"]')) {
     const favicon = document.createElement('link');
     favicon.rel = 'icon';
