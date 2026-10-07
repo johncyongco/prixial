@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pyl AI — Spatial Intelligence by Prixial</title>
+  <meta name="description" content="Pyl AI combines mature spatial infrastructure with Prixial's contextual intelligence layer.">
+  <link rel="icon" type="image/png" href="public/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="nav" id="nav">
+      <a class="wordmark wordmark--logo" href="index.html#top" aria-label="Prixial home"><img src="public/logo.png" alt="Prixial mark"></a>
+      <nav class="nav__links" aria-label="Main navigation">
+        <a href="index.html#services">Solutions</a>
+        <a href="index.html#method">System</a>
+        <a href="about.html">About</a>
+        <a class="nav__link--active" href="index.html#projects">Use Cases</a>
+        <a href="index.html#journal">Blog</a>
+      </nav>
+      <a class="nav__cta" href="https://cal.com/john-christian-yongco-pqx6d2/discovery">Contact <span>&rarr;</span></a>
+      <button class="menu-button" id="menu-button" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    </header>
+
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+      <a href="index.html#services">Solutions</a><a href="index.html#method">System</a><a href="about.html">About</a><a href="index.html#projects">Use Cases</a><a href="index.html#journal">Blog</a>
+      <a class="button button--dark" href="mailto:johnc.yongco@gmail.com">Get in Touch <span>&rarr;</span></a>
+    </div>
+
+    <main id="top">
+      <section class="pyl-page-hero section-block">
+        <div class="pyl-page-hero__visual reveal">
+          <div class="pyl-hero-world">
+            <h1 class="pyl-orb-title" aria-label="A world in context."><span class="pyl-orb-title__left" data-type-text="A world" data-type-order="1"><span class="pyl-type-line"><span class="pyl-type-output">A world</span><i class="pyl-type-caret" aria-hidden="true"></i></span></span><span class="pyl-orb-title__right" data-type-text="in context." data-type-order="3"><span class="pyl-type-line"><span class="pyl-type-output">in context.</span><i class="pyl-type-caret" aria-hidden="true"></i></span></span></h1>
+            <p class="pyl-orb-description" data-type-text="PYL uses mature spatial infrastructure for maps, places, localization, and physical-world understanding while Prixial owns the contextual intelligence layer above it." data-type-order="2" data-type-speed="12"><span class="pyl-type-output">PYL uses mature spatial infrastructure for maps, places, localization, and physical-world understanding while Prixial owns the contextual intelligence layer above it.</span><i class="pyl-type-caret" aria-hidden="true"></i></p>
+            <p class="pyl-orb-context-description" data-type-text="Wherever you go, if a place has a Spatial, Pyl gives you access to the knowledge behind that place—its history, meaning, and the stories that bring it to life." data-type-order="4" data-type-speed="12"><span class="pyl-type-output">Wherever you go, if a place has a Spatial, Pyl gives you access to the knowledge behind that place—its history, meaning, and the stories that bring it to life.</span><i class="pyl-type-caret" aria-hidden="true"></i></p>
+            <div class="pyl-hero-orb">
+              <div class="pyl-hero-orb__grid" id="pyl-orb-grid" aria-hidden="true"></div>
+              <button class="pyl-orb-hotspot" id="pyl-orb-hotspot" type="button" aria-label="Enter this Spatial"><span class="pyl-orb-hotspot__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="5" y="5" width="14" height="14"/></svg></span><span class="pyl-orb-hotspot__label">Enter Spatial</span></button>
+              <button class="pyl-orb-control pyl-orb-control--prev" type="button" data-orb-direction="-1" aria-label="Previous spatial scene"><span>&larr;</span></button>
+              <span class="pyl-orb-scene-label" id="pyl-orb-scene-label">Casa Gorordo Museum</span>
+              <button class="pyl-orb-control pyl-orb-control--next" type="button" data-orb-direction="1" aria-label="Next spatial scene"><span>&rarr;</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="pyl-orb-stage" id="pyl-orb-stage" aria-hidden="true">
+          <div class="pyl-orb-stage__grid" id="pyl-orb-stage-grid" aria-hidden="true"></div>
+          <span class="pyl-orb-stage__scene" id="pyl-orb-stage-label">Casa Gorordo Museum</span>
+          <div class="pyl-passage-chat pyl-orb-stage__chat">
+            <span id="pyl-chat-heading">Ask Pyl anything within this place</span>
+            <div class="pyl-chat-log" id="pyl-chat-log" aria-live="polite"></div>
+            <form class="pyl-passage-chat__field" id="pyl-chat-form">
+              <input class="pyl-chat-input" id="pyl-chat-input" type="text" placeholder="Ask a question" autocomplete="off" aria-label="Ask Pyl a question">
+              <span class="pyl-passage-chat__actions"><i class="pyl-passage-chat__mic" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><rect x="5.25" y="1.5" width="5.5" height="8.25" rx="2.75"></rect><path d="M3.5 7.75a4.5 4.5 0 0 0 9 0M8 12.25v2.25M5.75 14.5h4.5"></path></svg></i><button class="pyl-chat-send" type="submit" aria-label="Send question"><span>&rarr;</span></button></span>
+            </form>
+            <div class="pyl-chat-suggestions" id="pyl-chat-suggestions"></div>
+            <p class="pyl-chat-note">Demo responses &middot; sample knowledge for this Spatial.</p>
+          </div>
+          <button class="pyl-orb-stage__close" id="pyl-orb-stage-close" type="button" aria-label="Exit Spatial view"><span>&times;</span></button>
+        </div>
+        <a class="pyl-scroll-cue" id="pyl-scroll-cue" href="#how-pyl-works" aria-label="Scroll to How PYL Works"><span>&darr;</span></a>
+      </section>
+
+      <section class="pyl-page-statement section-block reveal">
+        <span class="eyebrow">Pyl AI</span>
+        <div><h2>Build on the world.<br><em>Own the intelligence.</em></h2></div>
+      </section>
+
+      <section class="pyl-page-layers section-block">
+        <article class="pyl-layer reveal">
+          <span class="eyebrow">Places can speak</span>
+          <h3>Ask where<br>you are.</h3>
+          <div class="pyl-layer__copy"><p>You&rsquo;re at a museum, standing in front of a huge painting. Instead of searching, you ask Pyl AI.</p><p>Pyl AI connects you to knowledge belonging to the place you&rsquo;re in.</p><p>No searching through pages. No figuring out what to ask first. Just look around&mdash;and ask.</p></div>
+        </article>
+        <article class="pyl-layer reveal reveal--delay-1">
+          <span class="eyebrow">Institutions</span>
+          <h3>Your knowledge.<br>Where it matters.</h3>
+          <div class="pyl-layer__copy"><p>Bring trusted information into the places people experience it. Create a Spatial from the knowledge you already have. Keep it current. Decide what people can access.</p></div>
+        </article>
+      </section>
+
+      <section class="pyl-how section-block" id="how-pyl-works">
+        <div class="section-heading reveal"><h2>How PYL<br><em>works.</em></h2></div>
+        <div class="pyl-how-grid">
+          <article class="pyl-how-step reveal"><span>01</span><div class="pyl-how-visual pyl-how-visual--place" aria-hidden="true"><img src="public/pyl-places/museum.jpg" alt=""><div class="pyl-place-scan"></div><div class="pyl-place-pin"><i></i><b>Museum</b><small>Spatial detected</small></div></div><h3>Enter a Spatial</h3><p>PYL understands the place and the context around it.</p></article>
+          <article class="pyl-how-step reveal reveal--delay-1"><span>02</span><div class="pyl-how-visual pyl-how-visual--ask" aria-hidden="true"><div class="pyl-dialogue-line"><b>You</b><p>I&rsquo;m looking at a huge painting. People are being dragged away. What is it?</p></div><div class="pyl-listening"><i></i><span>PYL is listening</span></div></div><h3>Ask where you are</h3><p>Ask naturally without searching through pages or knowing what to look for first.</p></article>
+          <article class="pyl-how-step reveal reveal--delay-2"><span>03</span><div class="pyl-how-visual pyl-how-visual--knowledge" aria-hidden="true"><div class="pyl-knowledge-line pyl-knowledge-line--one"></div><div class="pyl-knowledge-line pyl-knowledge-line--two"></div><span class="pyl-knowledge-node pyl-knowledge-node--place">Place</span><span class="pyl-knowledge-node pyl-knowledge-node--spatial">Spatial</span><span class="pyl-knowledge-node pyl-knowledge-node--knowledge">Knowledge</span></div><h3>Connect with place-based knowledge</h3><p>PYL retrieves knowledge belonging to the place you are experiencing.</p></article>
+          <article class="pyl-how-step reveal reveal--delay-3"><span>04</span><div class="pyl-how-visual pyl-how-visual--answer" aria-hidden="true"><div class="pyl-answer-card"><b>Pyl AI</b><p>You may be looking at <em>Spoliarium</em> by Juan Luna. Want to know what is happening in the scene?</p><small>Knowledge provided by this Spatial.</small></div></div><h3>Receive a grounded response</h3><p>Get an answer rooted in trusted, current, and permissioned knowledge.</p></article>
+        </div>
+      </section>
+
+      <section class="pyl-page-belief section-block reveal">
+        <p class="eyebrow">The distinction</p>
+        <blockquote>Google Maps knows what the place is.<br><em>PYL gives relevant context and knowledge within that place.</em></blockquote>
+      </section>
+
+      <section class="final-cta section-block reveal" id="contact"><div class="final-cta__grid"></div><div class="final-cta__content"><p class="eyebrow">Intent &times; Intelligence</p><h2>Looking to build your own<br><em>spatial intelligence?</em></h2><a class="button button--dark" href="https://cal.com/john-christian-yongco-pqx6d2/30min">Request Demo <span>&rarr;</span></a></div><div class="final-cta__mark">IXI</div></section>
+    </main>
+
+    <footer class="footer"><div class="footer__top"><div class="footer__brand"><a class="wordmark" href="index.html#top">PRIXIAL<span class="wordmark__dot">.</span></a><p>Context-aware AI systems<br>for a world in context.</p></div><div class="footer__column"><span class="eyebrow">Company</span><a href="about.html">About</a><a href="pyl-ai.html">Pyl AI</a><a href="index.html#journal">Blog</a><a href="#contact">Contact</a></div><div class="footer__column"><span class="eyebrow">What We Build</span><a href="index.html#services">Intent discovery</a><a href="index.html#services">Contextual retrieval</a><a href="index.html#services">Spatial intelligence</a><a href="index.html#services">Adaptive systems</a></div><div class="footer__column"><span class="eyebrow">Focus</span><a href="index.html#method">System</a><a href="pyl-ai.html">Pyl AI</a><a href="index.html#journal">Field notes</a></div><div class="footer__column"><span class="eyebrow">Contact</span><a href="mailto:johnc.yongco@gmail.com">Get in Touch</a></div></div><div class="footer__bottom"><span>&copy; 2026 Prixial. All rights reserved.</span><span>Intent &times; Intelligence.</span><a href="#top">Back to top &uarr;</a></div></footer>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>
