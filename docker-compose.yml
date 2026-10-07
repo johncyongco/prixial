@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   prixial:
     build: .
@@ -13,13 +11,20 @@ services:
       - "traefik.enable=true"
       - "traefik.docker.network=traefik"
 
+      # HTTPS router
       - "traefik.http.routers.prixial.rule=Host(`prixial.xyz`) || Host(`www.prixial.xyz`)"
-
       - "traefik.http.routers.prixial.entrypoints=websecure"
       - "traefik.http.routers.prixial.tls=true"
       - "traefik.http.routers.prixial.tls.certresolver=letsencrypt"
 
       - "traefik.http.services.prixial.loadbalancer.server.port=80"
+
+      # HTTP -> HTTPS redirect router
+      - "traefik.http.routers.prixial-http.rule=Host(`prixial.xyz`) || Host(`www.prixial.xyz`)"
+      - "traefik.http.routers.prixial-http.entrypoints=web"
+      - "traefik.http.routers.prixial-http.middlewares=prixial-redirect"
+      - "traefik.http.middlewares.prixial-redirect.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.prixial-redirect.redirectscheme.permanent=true"
 
 networks:
   traefik:
